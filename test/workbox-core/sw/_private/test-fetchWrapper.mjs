@@ -10,11 +10,7 @@ import {fetchWrapper} from 'workbox-core/_private/fetchWrapper.mjs';
 
 
 describe(`fetchWrapper`, function() {
-  let sandbox;
-
-  before(function() {
-    sandbox = sinon.createSandbox();
-  });
+  let sandbox = sinon.createSandbox();
 
   afterEach(function() {
     sandbox.restore();

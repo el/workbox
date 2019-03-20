@@ -109,7 +109,9 @@ describe(`DBWrapper`, function() {
     const db = await new DBWrapper('db', 999).open();
     db.close();
     await deleteDatabase('db');
+  });
 
+  afterEach(function() {
     sandbox.restore();
   });
 

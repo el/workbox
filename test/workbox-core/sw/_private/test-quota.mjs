@@ -18,15 +18,12 @@ describe(`quota`, function() {
   });
 
   describe(`executeQuotaErrorCallbacks()`, function() {
-    let sandbox;
-
-    before(function() {
-      sandbox = sinon.sandbox.create();
-    });
+    const sandbox = sinon.createSandbox();
 
     afterEach(function() {
       sandbox.restore();
     });
+
     it('should call everything registered with registerQuotaErrorCallback()', async function() {
       const callback1 = sandbox.stub();
       registerQuotaErrorCallback(callback1);

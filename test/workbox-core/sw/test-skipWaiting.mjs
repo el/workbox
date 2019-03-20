@@ -10,11 +10,7 @@ import {skipWaiting} from 'workbox-core/skipWaiting.mjs';
 
 
 describe(`skipWaiting`, function() {
-  let sandbox = sinon.createSandbox();
-
-  beforeEach(function() {
-    sandbox.restore();
-  });
+  const sandbox = sinon.createSandbox();
 
   after(function() {
     sandbox.restore();

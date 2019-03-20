@@ -19,6 +19,9 @@ describe(`cacheWrapper`, function() {
     for (const cacheKey of cacheKeys) {
       await caches.delete(cacheKey);
     }
+  });
+
+  afterEach(function() {
     sandbox.restore();
   });
 

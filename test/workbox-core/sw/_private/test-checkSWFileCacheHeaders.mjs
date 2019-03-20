@@ -15,7 +15,9 @@ describe(`checkSWFileCacheHeaders`, function() {
   let sandbox = sinon.createSandbox();
 
   beforeEach(function() {
-    sandbox.stub(logger);
+    if (process.env.NODE_ENV !== 'production') {
+      sandbox.stub(logger);
+    }
   });
 
   afterEach(function() {

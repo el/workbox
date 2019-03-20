@@ -10,13 +10,9 @@ import {clientsClaim} from 'workbox-core/clientsClaim.mjs';
 
 
 describe(`clientsClaim`, function() {
-  let sandbox = sinon.createSandbox();
+  const sandbox = sinon.createSandbox();
 
-  beforeEach(function() {
-    sandbox.restore();
-  });
-
-  after(function() {
+  afterEach(function() {
     sandbox.restore();
   });
 
