@@ -6,14 +6,11 @@
   https://opensource.org/licenses/MIT.
 */
 
-import {expect} from 'chai';
-import sinon from 'sinon';
-
-import expectError from '../../../../infra/testing/expectError';
-import {executeQuotaErrorCallbacks, registerQuotaErrorCallback} from '../../../../packages/workbox-core/_private/quota.mjs';
+import {executeQuotaErrorCallbacks, registerQuotaErrorCallback} from 'workbox-core/_private/quota.mjs';
 import {devOnly} from '../../../../infra/testing/env-it';
 
-describe(`workbox-core quota`, function() {
+
+describe(`quota`, function() {
   describe(`registerQuotaErrorCallback()`, function() {
     devOnly.it(`should throw when passed a non-function`, async function() {
       await expectError(() => registerQuotaErrorCallback(null), 'incorrect-type');
